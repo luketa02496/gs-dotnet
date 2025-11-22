@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("workwell")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a058a3e69c9bf8c3f9925bcb88c769eb9861600e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4ef1624f5892aeef0f75cd3585a8de6d312b737")]
 [assembly: System.Reflection.AssemblyProductAttribute("workwell")]
 [assembly: System.Reflection.AssemblyTitleAttribute("workwell")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
