@@ -2,7 +2,7 @@
   {
     "ContainingType": "WorkWell.Api.Controllers.AssessmentsController",
     "Method": "Create",
-    "RelativePath": "api/Assessments",
+    "RelativePath": "api/v1/Assessments",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "WorkWell.Api.Controllers.AssessmentsController",
     "Method": "GetById",
-    "RelativePath": "api/Assessments/{id}",
+    "RelativePath": "api/v1/Assessments/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -34,7 +34,7 @@
   {
     "ContainingType": "WorkWell.Api.Controllers.AssessmentsController",
     "Method": "Delete",
-    "RelativePath": "api/Assessments/{id}",
+    "RelativePath": "api/v1/Assessments/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -50,7 +50,7 @@
   {
     "ContainingType": "WorkWell.Api.Controllers.AssessmentsController",
     "Method": "GetByUser",
-    "RelativePath": "api/Assessments/user/{userId}",
+    "RelativePath": "api/v1/Assessments/user/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -66,17 +66,28 @@
   {
     "ContainingType": "WorkWell.Api.Controllers.UseresController",
     "Method": "GetAll",
-    "RelativePath": "api/Useres",
+    "RelativePath": "api/v1/Useres",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "WorkWell.Api.Controllers.UseresController",
     "Method": "Create",
-    "RelativePath": "api/Useres",
+    "RelativePath": "api/v1/Useres",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -92,7 +103,7 @@
   {
     "ContainingType": "WorkWell.Api.Controllers.UseresController",
     "Method": "GetById",
-    "RelativePath": "api/Useres/{id}",
+    "RelativePath": "api/v1/Useres/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -108,7 +119,7 @@
   {
     "ContainingType": "WorkWell.Api.Controllers.UseresController",
     "Method": "Delete",
-    "RelativePath": "api/Useres/{id}",
+    "RelativePath": "api/v1/Useres/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -119,16 +130,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WorkWell.Api.Controllers.UseresController",
-    "Method": "Debug",
-    "RelativePath": "api/Useres/debug",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {

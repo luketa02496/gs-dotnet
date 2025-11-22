@@ -7,7 +7,7 @@ using WorkWell.Api.Repositories;
 namespace WorkWell.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     public class UseresController : ControllerBase
     {
         private readonly IUseresRepository _repo;
@@ -17,12 +17,34 @@ namespace WorkWell.Api.Controllers
             _repo = repo;
         }
 
-        
+
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
-            return Ok(await _repo.GetAllAsync());
+            var items = await _repo.GetPagedAsync(page, pageSize);
+            var total = await _repo.CountAsync();
+
+            var result = new
+            {
+                data = items,
+                pagination = new
+                {
+                    page,
+                    pageSize,
+                    totalItems = total,
+                    totalPages = (int)Math.Ceiling(total / (double)pageSize)
+                },
+                links = new
+                {
+                    self = Url.Action(null, new { page, pageSize }),
+                    next = page * pageSize < total ? Url.Action(null, new { page = page + 1, pageSize }) : null,
+                    prev = page > 1 ? Url.Action(null, new { page = page - 1, pageSize }) : null
+                }
+            };
+
+            return Ok(result);
         }
+
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(decimal id)

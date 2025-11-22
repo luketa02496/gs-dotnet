@@ -8,5 +8,9 @@ namespace WorkWell.Api.Repositories
         Task<Useres?> GetByIdAsync(decimal id);
         Task<decimal> CreateAsync(Useres user);
         Task<bool> DeleteAsync(decimal id);
+
+        Task<IEnumerable<Useres>> GetPagedAsync(int page, int pageSize);
+        Task<int> CountAsync();
+
     }
 }

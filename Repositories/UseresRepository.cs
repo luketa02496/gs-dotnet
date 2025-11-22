@@ -48,5 +48,31 @@ namespace WorkWell.Api.Repositories
             var rows = await _db.ExecuteAsync(sql, new { Id = id });
             return rows > 0;
         }
+
+        public async Task<IEnumerable<Useres>> GetPagedAsync(int page, int pageSize)
+        {
+            var sql = @"
+        SELECT *
+        FROM (
+            SELECT u.*, ROW_NUMBER() OVER (ORDER BY id) AS rn
+            FROM useres u
+        )
+        WHERE rn BETWEEN :StartRow AND :EndRow";
+
+            int startRow = ((page - 1) * pageSize) + 1;
+            int endRow = page * pageSize;
+
+            return await _db.QueryAsync<Useres>(sql, new
+            {
+                StartRow = startRow,
+                EndRow = endRow
+            });
+        }
+
+        public async Task<int> CountAsync()
+        {
+            return await _db.ExecuteScalarAsync<int>("SELECT COUNT(*) FROM useres");
+        }
+
     }
 }

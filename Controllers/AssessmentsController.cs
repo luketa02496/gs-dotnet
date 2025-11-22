@@ -5,7 +5,7 @@ using WorkWell.Api.Repositories;
 namespace WorkWell.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     public class AssessmentsController : ControllerBase
     {
         private readonly IAssessmentRepository _repo;
