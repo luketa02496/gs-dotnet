@@ -1,0 +1,6 @@
+@workwell_HostAddress = http://localhost:5056
+
+GET {{workwell_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
