@@ -1,12 +1,6 @@
 ## Link publico do deploy:
 https://gs-dotnet-x0ec.onrender.com/
 
-## Autenticacao no Postman:
-antes de tentar acessar os endpoints é preciso fazer a autenticacao
-
-Basic Auth
-Username: lucas@workwell.com
-senha: 654321
 # 📘 WorkWell API --- Plataforma de Bem-Estar no Trabalho
 
 API RESTful desenvolvida em **.NET 8**, utilizando **Dapper** para
